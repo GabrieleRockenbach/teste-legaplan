@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
+.todoContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.todoGroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 450px;
+    border-radius: 16px;
+    border: solid 1px #EAECF0;
+    flex-direction: column;
+    padding: 32px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px 0px #1018280D;
+}
+.buttonAddTask{
+    width: 450px;
+    height: 51px;
+    margin-top: 24px;
+    border-radius: 8px;
+    color: #ffffff;
+    border: none;
+    background: linear-gradient(to right, #0796D3, #53C0F0);
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+}
+.groupTaskTitle{
+    font-family: "Inter Tight" , sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    color: #0000008A;
+    text-align: center;
+    margin: 0;
+}
+.groupTaskTitleDone{
+    margin-top: 24px;
+}
+.taskGroup{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    width: 386px;
+    gap: 16px;
+    box-sizing: border-box;
+    padding: 16px;
+    border: dashed 1px #D7DDE9;
+    border-radius: 8px;
+    align-items: center;
+    cursor: pointer;
+}
+.taskGroup:hover {
+    background-color: #F7F9FD;
+}
+.taskGroup:hover .customCheckbox span {
+    background-color: #F7F9FD; /* Muda a cor de fundo do checkbox ao passar o mouse */
+}
+.taskContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    gap: 24px;
+    margin: 24px 0 0;
+}
+.trashButton{
+    padding: 0;
+    border: none;
+    background: none;
+    display: inline-block;
+    height: 24px;
+    cursor: pointer;
+}
+.customCheckbox{
+    height: 24px;
+}
+.customCheckbox input {
+    display: none;
+  }
+.customCheckbox span {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: #ffffff;
+    border: 1px solid #D7DDE9;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    box-sizing: border-box;
+}
+.customCheckbox input:checked + span {
+    background-color: #A0DCF6;
+    border-color: #0796D3;
+}
+.customCheckbox input:checked + span::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 2px;
+    width: 8.25px;
+    height: 12px;
+    border: solid 1px #0796D3;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+.customCheckbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.taskText{
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin: 0;
+    color: #000000;
+}
+.taskTextDone{
+    text-decoration: line-through;
+    color: #0000008A;
+}
+@media (max-width: 767px){
+    .todoContainer{
+        padding: 0 24px;
+        width: 100vw;
+
+        .todoGroup{
+            width: 100%;
+
+            .taskContainer{
+                width: 100%;
+
+                .taskGroup{
+                    width: 100%;
+                }
+            }
+        }
+        .buttonAddTask{
+            width: 100%;
+        }
+    }
+}

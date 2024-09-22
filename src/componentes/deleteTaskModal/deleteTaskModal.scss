@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
+.modalOverlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFFCC;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+}
+.modalContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0px 24px 48px -12px #1018282E;
+    background-color: #ffffff;
+
+}
+.modalTitle{
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin: 0;
+    color: #000000;
+}
+.modalMessage{
+    font-family: 'Inter Tight' ,sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #0000008A;
+    margin: 0;
+}
+.buttonModal{
+    width: 185px;
+    height: 51px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    border: none;
+}
+.buttonModalContainer{
+    display: flex;
+    gap: 16px;
+
+    .buttonModalCancel{
+        color: #000000;
+        background-color: #E7EEFB;
+    }
+    .buttonModalDelete{
+        color: #FFFFFF;
+        background: linear-gradient(to right, #D30707, #F05353);
+    }
+}
+@media screen and (max-width: 767px){
+
+    .modalOverlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        height: 200vh;
+        width: 200vw;
+    }
+    .modalContainer{
+        padding: 24px;
+        border-radius: 0;
+        box-shadow: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .modalInputContainer{
+        width: 100vw;
+    }
+    .buttonModalContainer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .buttonModal{
+        width: 100%;
+    }
+}

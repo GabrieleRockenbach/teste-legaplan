@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap');
+
+.modalNewTaskOverlay{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFFFFCC;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // backdrop-filter: blur(1px);
+}
+.modalNewTaskContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    gap: 32px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    box-shadow: 0px 24px 48px -12px #1018282E;
+    background-color: #ffffff;
+
+}
+.modalNewTaskTitle{
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    margin: 0;
+    color: #000000;
+}
+.modalNewTaskInputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label{
+        font-family: 'Inter Tight' , sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #000000;
+    }
+    input{
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #D7DDE9;
+        font-family: 'Inter Tight' , sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #0000008F;
+    }
+    input::placeholder{
+        color: #0000008F;
+    }
+    input:focus{
+        outline: none;
+    }
+}
+.buttonModalNewTask{
+    width: 185px;
+    height: 51px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-family: 'Inter Tight' , sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.36px;
+    letter-spacing: -0.02em;
+    text-align: center;
+    border: none;
+}
+.buttonModalNewTaskContainer{
+    display: flex;
+    gap: 16px;
+
+    .buttonModalNewTaskCancel{
+        color: #000000;
+        background-color: #E7EEFB;
+    }
+    .buttonModalNewTaskAdd{
+        color: #FFFFFF;
+        background: linear-gradient(to right, #0796D3, #53C0F0);
+    }
+}
+
+@media screen and (max-width: 767px){
+    .modalNewTaskOverlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #ffffff;
+        height: 200vh;
+        width: 200vw;
+    }
+    .modalNewTaskContainer{
+        padding: 24px;
+        border-radius: 0;
+        box-shadow: none;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+    .modalNewTaskInputContainer{
+        width: 100vw;
+    }
+    .buttonModalNewTaskContainer{
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    .buttonModalNewTask{
+        width: 100%;
+    }
+}
+
