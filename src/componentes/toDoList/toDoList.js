@@ -8,11 +8,15 @@ import './toDoList.scss'
 
 export default function ToDoList() {
   
-  const [todoItems, setTodoItems] = useState(() => {
-    const savedItems = localStorage.getItem('items');
-    return savedItems ? JSON.parse(savedItems) : [];
-  });
+  const [todoItems, setTodoItems] = useState([]);
 
+  useEffect(() => {
+    const savedItems = localStorage.getItem('items');
+    if (savedItems) {
+      setTodoItems(JSON.parse(savedItems));
+    }
+  }, []);
+  
   useEffect(()=> {
     localStorage.setItem('items' , JSON.stringify(todoItems))
   },[todoItems])

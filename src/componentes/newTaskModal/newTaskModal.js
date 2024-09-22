@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import './newTaskModal.scss'
 
 export default function NewTaskModal({isOpen , onClose , addTodo}) {
@@ -16,10 +16,15 @@ export default function NewTaskModal({isOpen , onClose , addTodo}) {
   const handleInputTextChange = (e) => {
     setInputText(e.target.value);
   }
+  
+  const [items, setItems] = useState([]);
 
-  let items = JSON.parse(localStorage.getItem('items')) || []
+  useEffect(() => {
+    const savedItems = JSON.parse(localStorage.getItem('items')) || [];
+    setItems(savedItems);
+  }, []); // Executa apenas uma vez, após a montagem do componente
 
-  function addTask (items){
+  const addTask = () => {
     if (inputText.trim() === '') {
       onClose();
       return;
@@ -28,16 +33,16 @@ export default function NewTaskModal({isOpen , onClose , addTodo}) {
     const existingIds = items.map(item => item.id);
     const newId = existingIds.length > 0 ? Math.max(...existingIds) + 1 : 1;
     const newTask = {
-        id: newId,
-        text: inputText,
-        checked: false
-    }
-    items.push(newTask);
-    localStorage.setItem('items' , JSON.stringify(items))
+      id: newId,
+      text: inputText,
+      checked: false
+    };
+    const updatedItems = [...items, newTask];
+    
+    localStorage.setItem('items', JSON.stringify(updatedItems));
     addTodo(newTask);
     onClose();
-  }
-
+  };
   return (
     <div onClick={closeModalOnOverlay} className='modalNewTaskOverlay'>
       <div className='modalNewTaskContainer'>
