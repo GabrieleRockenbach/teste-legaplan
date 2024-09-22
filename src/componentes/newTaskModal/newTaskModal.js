@@ -16,13 +16,13 @@ export default function NewTaskModal({isOpen , onClose , addTodo}) {
   const handleInputTextChange = (e) => {
     setInputText(e.target.value);
   }
-  
+
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     const savedItems = JSON.parse(localStorage.getItem('items')) || [];
     setItems(savedItems);
-  }, []); // Executa apenas uma vez, após a montagem do componente
+  }, []);
 
   const addTask = () => {
     if (inputText.trim() === '') {
